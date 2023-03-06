@@ -1,0 +1,100 @@
+////////////////////////////////////////////////////////////////////////////////////////////
+TEST LOGIQUE
+
+1/ Suite de lettres et de chiffres
+
+54  48 42 36 30 24
+A B D G K P V
+A - 1/D - 4/H - 8/M - 13/S - 19/Z
+
+
+2/ Logique numérique
+13/22
+23/1536
+49/73
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+Exercice 1 :
+Algorithme ChaineVoyelles
+    Variables: Ch , ch2 : chaine de caractères
+                i , j : entier
+                verif : booleen
+    Début
+        verif <-  true
+        Ch <- ""
+        Ch2 <- ""
+        Repeter 
+            Ecrire("Entrez une chaine des caractères")
+            lire(Ch)
+            Pour i de 0 à long(Ch)-1 Faire
+                Si ((ORD(Ch[i])>= 65  && ORD(Ch[i]) =< 90) || (ORD(Ch[i]) >= 97 && ORD(Ch[i]) =< 122) )
+                    alors verif <- true
+                 Sinon verif <- false
+                FinSi
+            FinPour
+        Jusqu'a (verif == True || long(Ch) > 1 )
+        
+        Pour j de 0 à long(Ch)-1 Faire
+           Si (ORD(Ch[j])= 97 || ORD(Ch[j])= 65 || ORD(Ch[j])=101 || ORD(Ch[j])=69 || ORD(Ch[j])=105 || ORD(Ch[j])=73 || ORD(Ch[j])=111 
+                  || ORD(Ch[j])=79 || ORD(Ch[j])=117 || ORD(Ch[j])=85 || ORD(Ch[j])=121 || ORD(Ch[j])= 89)
+                alors ch2 <- ch2 
+             Sinon 
+                Si ((ORD(Ch[j]) >= 65 && ORD(Ch[j]) =< 90))
+                            alors ch2 <- ch2 + "." + CHR(ORD(Ch[j])-32)
+                   Sinon ch2 <- ch2 + "." + Ch[j]
+                FinSi
+           FinSi
+        FinPour
+        Ecrire ("la nouvelles chaine est ",ch2)
+    Fin
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    Exercice 2:
+
+
+    Algorithme: Jeu
+    Variables: Joeurs, T : tableau
+                C : chaine de caractères
+                 i, j, k, N, M : entier
+    Fonction Classement(joueur : chaine de caractères): entier
+            Variables
+                Class<- 0
+                Pour i de 0 à long(Joueurs)-1 Faire
+                    Si ( Joueurs[i] == joueur)
+                        alors Class <- i +1
+                    FinSi 
+                FinPour
+              Retourner Class
+            Fin 
+    Début
+        TQ (N=<0)faire
+            Ecrire("Entrez le round")
+            Lire(N)
+        FinTQ    
+        TQ (M=<1)faire
+            Ecrire("Entrez le nombre des joueurs")
+            Lire(M)
+        finTQ
+        Pour i de 0 à M-1 Faire
+            Ecrire("Entrez un nom")
+            Lire(Joueurs[i])
+            T[i]<- 0
+        FinPour
+        Pour i de 1 à N Faire
+            Ecrire("Entrez le nom de joueur")
+            lire(C)
+            Ecrire ("Entrez un score")
+            Lire(sc)
+            Pour j de 0 à long(Nom)-1 Faire
+                si (Nom[j] == CH)
+                    alors score[j] <- score[j] + score
+                FinSi
+            FinPour
+        FinPour
+...
+
+ 
+    Fin
